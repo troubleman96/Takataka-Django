@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Takataka Waste Management{% endblock %}
+
+{% block content %}
+<div class="p-5 mb-4 bg-light rounded-3 shadow-sm border border-success border-opacity-25"
+    style="border-left: 5px solid #198754 !important;">
+    <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">Karibu Takataka Management</h1>
+        <p class="col-md-8 fs-4">A digital solution for waste collection and management in Tanzania. Register your
+            household, track collections, and handle payments seamlessly.</p>
+        {% if not user.is_authenticated %}
+        <a href="{% url 'accounts:register' %}" class="btn btn-success btn-lg px-4">Get Started</a>
+        {% else %}
+        <a href="#" class="btn btn-success btn-lg px-4">Go to Dashboard</a>
+        {% endif %}
+    </div>
+</div>
+
+<div class="row g-4 mt-4">
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title text-success">Household Registry</h5>
+                <p class="card-text">Manage household information and members for efficient service delivery.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title text-success">Collection Tracking</h5>
+                <p class="card-text">Monitor collection schedules, routes, and vehicle status in real-time.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title text-success">Payment System</h5>
+                <p class="card-text">Easily handle service payments and track financial records across wards.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
